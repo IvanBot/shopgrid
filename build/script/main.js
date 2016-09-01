@@ -307,22 +307,24 @@
   ========================================= */
 
 	var start_x;
+  var ghosty = $('<div class="ghosty" style="background:rgba(255,0,0,0); width:100%; height: 100%; position:fixed; display:none; top:0; left: 0;"></div>');
 	slide();
 
 	function slide() {
 
     var x;
+    var current;
+    console.log(current);
 
 		Events('#sec-tab_slider', 'down', startSlide);
-		var ghosty = $('<div class="ghosty" style="background:rgba(255,0,0,0); width:100%; height: 100%; position:fixed; display:none; top:0; left: 0;"></div>');
 
 		function startSlide(evt) {
-
+      current = parseInt($('.tab_slider').css('left'));
 			x = evt.clientX;
 			start_x = x;
-			console.log(start_x);
+      console.log(start_x);
 
-			$(document.body).append(ghosty);
+      $(document.body).append(ghosty);
 
 			ghosty.css('display','block');
 			Events('.ghosty', 'move', moveSlide);
@@ -330,49 +332,34 @@
 		}
 
 		function moveSlide(evt) {
-
 			var x = evt.clientX;
 
-			if(evt.touches){
-				x = evt.touches[0].clientX;
-			}
+			// if(evt.touches){
+			// 	x = evt.touches[0].clientX;
+			// }
 
-			x -= start_x;
+      // console.log(x, start_x);
+			x = current + x - start_x;
       console.log(x);
 
-			// if ( x <= -img_width/2 ) {
-			// 	x = -img_width;
-			// }
-			// else if ( x >= img_width/2 ) {
-			// 	x = img_width;
-			// }
+      if ( x <= -img_width/2 ) {
+        x = current - img_width;
+      }
+      else if ( x >= img_width/2 ) {
+        x = current + img_width;
+      }
 
 			$('.tab_slider').css('left', x+'px');
-      // $('.tab_slider').animate(
-      //   { left: x},
-      //   { duration: 200 } );
 		}
 
 		function stopSlide(evt) {
-			//console.log('up');
+
 			ghosty.css('display', 'none');
 			removeEvents('.ghosty', 'move',moveSlide);
 			removeEvents('.ghosty', 'up', stopSlide);
 
-      if ( x <= -img_width/2 ) {
-        x = -img_width;
-      }
-      else if ( x >= img_width/2 ) {
-        x = -img_width;
-      }
 
-      console.log(img_width);
-
-      $('.tab_slider').animate(
-        { left: x},
-        { duration: 200 } );
-
-			x = parseInt($('.tab_slider').css('left'));
+			// x = parseInt($('.tab_slider').css('left'));
 		}
 	};
 
