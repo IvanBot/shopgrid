@@ -88,7 +88,6 @@
 	genSlide();
 	function genSlide() {
 
-		$(slider).css('left', -img_width);
 		var set = 0;
 
 		$(DOM.tab_slider).each(function(index) {
@@ -99,6 +98,10 @@
 				element:  $this,
 				index:    index,
 			});
+
+      if (index == 0) {
+        set = -img_width;
+      }
 
 			$this.css('left', set + 'px');
 			set = set + img_width;
@@ -188,6 +191,8 @@
 
 				//
 				element_index = limit(element_index);
+
+        // 0 ?
 				img_id = img + element_index;
 
 
@@ -238,9 +243,12 @@
 						slider_pos = slider_pos + img_width;
 						current_pos_x = outset - tab.width;
 
+            // последняя картинка в начало
 						var str       = $(img_id).css('left');
 						var pos_start = parseInt(str.replace('px', ''));
 						img_pos = pos_start - img_width * tabs.length;
+            new_img = img_id;
+            console.log(img_pos, "px");
 					}
 
           // нет первого элемента
@@ -294,17 +302,23 @@
   	}
 	}
 
+  /** =============== START =================
+                 Слайдер скринов
+  ========================================= */
+
 	var start_x;
 	slide();
 
 	function slide() {
 
-		Events('#sec-tab_slider_area', 'down', startSlide);
+    var x;
+
+		Events('#sec-tab_slider', 'down', startSlide);
 		var ghosty = $('<div class="ghosty" style="background:rgba(255,0,0,0); width:100%; height: 100%; position:fixed; display:none; top:0; left: 0;"></div>');
 
 		function startSlide(evt) {
 
-			var x = evt.clientX;
+			x = evt.clientX;
 			start_x = x;
 			console.log(start_x);
 
@@ -324,15 +338,19 @@
 			}
 
 			x -= start_x;
+      console.log(x);
 
-			if ( x <= -img_width ) {
-				x = -img_width;
-			}
-			else if ( x >= img_width ) {
-				x = img_width;
-			}
+			// if ( x <= -img_width/2 ) {
+			// 	x = -img_width;
+			// }
+			// else if ( x >= img_width/2 ) {
+			// 	x = img_width;
+			// }
 
 			$('.tab_slider').css('left', x+'px');
+      // $('.tab_slider').animate(
+      //   { left: x},
+      //   { duration: 200 } );
 		}
 
 		function stopSlide(evt) {
@@ -341,9 +359,26 @@
 			removeEvents('.ghosty', 'move',moveSlide);
 			removeEvents('.ghosty', 'up', stopSlide);
 
+      if ( x <= -img_width/2 ) {
+        x = -img_width;
+      }
+      else if ( x >= img_width/2 ) {
+        x = -img_width;
+      }
+
+      console.log(img_width);
+
+      $('.tab_slider').animate(
+        { left: x},
+        { duration: 200 } );
+
 			x = parseInt($('.tab_slider').css('left'));
 		}
 	};
+
+  /** ================ END ==================
+                 Слайдер скринов
+  ========================================= */
 
 	getSlider();
 
