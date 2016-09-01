@@ -66,8 +66,8 @@ body {
         position: relative;
         top: -5px; }
     .header_top_become-partner {
-      -webkit-transition: opacity 0.5s;
-      transition: opacity 0.5s;
+      -webkit-transition: color  0.5s;
+      transition: color  0.5s;
       border-radius: 5px;
       cursor: pointer;
       float: right;
@@ -82,7 +82,7 @@ body {
       font-family: FuturaDemiC, sans-serif;
       font-size: 0.95em; }
     .header_top_become-partner:hover {
-      opacity: 0.2; }
+      color: #eb645a; }
   .header_logo {
     position: absolute;
     top: 50%;
