@@ -1,0 +1,181 @@
+doctype html
+
+head
+	link(rel="icon" href="images/favicon.ico")
+	title ShopGide
+	meta(charset="utf-8")
+	meta(name="viewport" content="width=device-width, initial-scale=1.0")
+	link(rel="stylesheet" href="style/common.css")
+	link(rel="stylesheet" href="style/normalize.css")
+	script(src="script/jquery.min.js")
+body
+	.header
+		.wrapper
+			.header_top
+				.header_top_social
+					.header_top_social_item
+						img.header_top_social_icon(src="/images/icon_fb.svg")
+					.header_top_social_item
+						img.header_top_social_icon(src="/images/icon_ig.svg")
+					.header_top_social_item
+						img.header_top_social_icon(src="/images/icon_tw.svg")
+					.header_top_social_item
+						img.header_top_social_icon(src="/images/icon_vk.svg")
+					.header_top_social_item
+						img.header_top_social_icon(src="/images/icon_ok.svg")
+				.header_top_become-partner СТАТЬ ПАРТНЕРОМ
+
+			.header_logo
+				.header_logo_popup
+					img(src="images/only_popup.svg")
+					span ТОЛЬКО ЛУЧШИЕ АКЦИИ
+				img.header_logo-img(src="/images/shopguide.svg")
+				.header_logo_desc загрузить
+				a(href="#" target="_blank")
+					img.header_logo_download.left(src="/images/download_ios.svg")
+				a(href="#" target="_blank")
+					img.header_logo_download.right(src="/images/download_android.svg")
+
+			.header_img.right
+
+	.items
+
+		.wrapper.flex
+
+			.items_elem
+				.items_elem_img.items_elem_img_like
+				.items_elem_txt
+					h1 ТОЛЬКО ЛУЧШЕЕ
+					p Всегда актуальные акции и скидки у вас в телефоне
+
+			.items_elem
+				.items_elem_img.items_elem_img_geo
+				.items_elem_txt
+					h1 ВСЕ РЯДОМ
+					p Находитие ближайшие акции на карте рядом с вами
+
+			.items_elem
+				.items_elem_img.items_elem_img_bell
+				.items_elem_txt
+					h1 УВЕДОМЛЕНИЯ
+					p Подписывайтесь только на то, что вас интересует и всегда будьте в курсе новых акций
+
+			.items_elem
+				.items_elem_img.items_elem_img_sheet
+				.items_elem_txt
+					h1 КАТАЛОГ
+					p Огромный каталог с информацией о магазинах, брендах и ТЦ всегда под рукой
+	.tabs
+		.tabs_bg
+		.wrapper
+			
+			.tabs_container
+				
+				ul#tabs
+					li.tab ИЗБРАННОЕ
+					li.tab ПРОФИЛЬ АКЦИИ
+					li.tab ПОДПИСКИ
+					li.tab КАРТА
+					li.tab МОЯ ЛЕНТА
+
+
+				.tabs_content(id='tab_content-0')
+					|Quo eu tacimates salutatus, pro an duis adipiscing. Pro alterum referrentur et.<br/> Animal torquatos usu no. No est accusam philosophia, sea stet<br/> putant facilis ut.
+
+				.tabs_content(id='tab_content-1')
+					|Lorem ipsum dolor sit amet, per ea malis nominati. Mea amet eros latine in.<br/> Te qui option noluisse adipisci. Id quaestio comprehensam nec,<br/> te aliquip bonorum neglegentur quo. Mel porro augue percipit id.
+
+				.tabs_content(id='tab_content-2')
+					|Ei nam perpetua referrentur, nam ex epicurei legendos. Ad quem mediocritatem qui.<br/> Mundi exerci te qui, sea affert soleat an, cu cum nostro eloquentiam. Modo oratio an nam,<br/> at eros debitis cum. Ignota iriure ex usu, per sint dolor integre in.
+				.tabs_content(id='tab_content-3')
+					|Pro ut posse malis novum, possit saperet recteque cu cum, modus prodesset<br/> delicatissimi nam eu. Duo ex vide graecis. <br/><br/>Suas diam mandamus id his. Accusam abhorreant theophrastus at vim,<br/> cu agam putent impedit quo. Tollit graece scripserit sed ex, eos ponderum electram ei.
+
+				.tabs_content(id='tab_content-4')
+					|Semper detraxit ex nam, eum quis choro referrentur ea, in oratio epicuri eam.<br/> Commodo consetetur definitionem eos te. Eam vide paulo doctus<br/> an, nam magna nominavi evertitur ne.<br/><br/> Ad sit labore regione adolescens. Justo placerat in est,<br/> ea persecuti expetendis est, qui an viderer corrumpit. Eum in ridens<br/> alterum, sea erant iudico eligendi cu, eros vivendo corpora at vix.
+														
+			.tabs_phone
+				
+				img(src="images/phone2.png" class='sec-tab_slider_bg' draggable="false")
+				
+				.tabs_screen
+					.tab_slider(id='sec-tab_slider')
+						img(src="images/phone2_favorites.jpg" id='sec-tab_slide-0')
+						img(src="images/phone2_actions.jpg" id='sec-tab_slide-1')
+						img(src="images/phone2_subsribtions.jpg" id='sec-tab_slide-2')
+						img(src="images/phone2_map.jpg" id='sec-tab_slide-3')
+						img(src="images/phone2_list.jpg" id='sec-tab_slide-4')
+
+				.tabs_screen(id="sec-tab_slider_area")
+
+	.actions
+		.wrapper.actions_img
+			.actions_content
+				h1 НАШИ АКЦИИ
+				p Каждый день в Москве проходят распродажи. В акциях и скидках дня могут принимать участие любые группы товаров. 
+
+				p Особенно популярны распродажи одежды и обуви, распродажи мебели, распродажи сумок.
+
+			
+				.actions_img_1
+				.actions_img_2
+
+	.partners
+		h1.partners_title НАШИ ПАРТНЕРЫ
+		.partners_main
+			.wrapper.flex
+				//- .partners_section_bg
+				//- центр
+				//- .wrapper.flex
+
+				a.arrow(id="arrow_left")
+					img.arrow_item(src="/images/arrow_left.svg")
+
+				.partners_section
+					.partners_slider
+						.partners_logo
+							img(src="/images/logos/1.png")
+						.partners_logo
+							img(src="/images/logos/2.png")
+						.partners_logo
+							img(src="/images/logos/3.png")
+						.partners_logo
+							img(src="/images/logos/4.png")
+						.partners_logo
+							img(src="/images/logos/5.png")
+						.partners_logo
+							img(src="/images/logos/6.png")
+						.partners_logo
+							img(src="/images/logos/7.png")
+						.partners_logo
+							img(src="/images/logos/7.png")
+
+				a.arrow(id="arrow_right")
+					img.arrow_item(src="/images/arrow_right.svg")
+
+
+	.become-partners
+		.become-partners_content
+			p Хотите стать партнером?
+			p Напишите нам и про ваши акции узнают все.
+		.become-partners_btn СТАТЬ ПАРТНЕРОМ
+	
+	.footer
+		.wrapper.flex
+			.footer_content
+				.footer_copyright 2016 © SHOPGUIDE
+				.footer_link
+					a(href="#") ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ
+					a(href="#") ПРАВИЛА ПОЛЬЗОВАНИЯ
+
+			.footer_connect
+				.footer_connect_img
+				span СВЯЗАТЬСЯ С НАМИ
+
+	script(src="script/main.js" defer)
+
+
+				
+
+
+
+	async

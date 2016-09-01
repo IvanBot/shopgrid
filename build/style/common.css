@@ -1,0 +1,576 @@
+@font-face {
+  font-family: FuturaDemiC;
+  src: url("/fonts/futurademic-webfont.eot");
+  /* IE9 Compat Modes */
+  src: url("/fonts/futurademic-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/futurademic-webfont.woff2") format("woff2"), url("/fonts/futurademic-webfont.woff") format("woff"), url("/fonts/futurademic-webfont.ttf") format("truetype"), url("/fonts/futurademic-webfont.svg#FuturaDemiC") format("svg");
+  /* Legacy iOS */ }
+
+@font-face {
+  font-family: FuturaBook;
+  src: url("/fonts/futurabookc-webfont.eot");
+  /* IE9 Compat Modes */
+  src: url("/fonts/futurabookc-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/futurabookc-webfont.woff2") format("woff2"), url("/fonts/futurabookc-webfont.woff") format("woff"), url("/fonts/futurabookc-webfont.ttf") format("truetype"), url("/fonts/futurabookc-webfont.svg#FuturaDemiC") format("svg");
+  /* Legacy iOS */ }
+
+body {
+  font-family: "FuturaBook";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0; }
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.right {
+  float: right !important; }
+
+.left {
+  float: left !important; }
+
+.header {
+  display: block;
+  position: relative;
+  background: url("/images/bg.jpg") no-repeat;
+  overflow: hidden;
+  height: 100vh;
+  min-height: 400px;
+  background-size: cover;
+  background-position: center; }
+  .header_top {
+    margin: auto;
+    padding-top: 35px;
+    padding-bottom: 35px; }
+    .header_top_social {
+      float: left; }
+      .header_top_social_item {
+        display: inline-block;
+        position: relative;
+        top: 0px;
+        -webkit-transition: top 0.3s;
+        transition: top 0.3s;
+        width: 40px;
+        height: 40px;
+        margin-right: 8px;
+        background: url("/images/icon_rect.svg");
+        background-size: cover;
+        background-position: center;
+        cursor: pointer; }
+      .header_top_social_item:hover {
+        position: relative;
+        top: -5px; }
+    .header_top_become-partner {
+      -webkit-transition: opacity 0.5s;
+      transition: opacity 0.5s;
+      border-radius: 5px;
+      cursor: pointer;
+      float: right;
+      display: inline-block;
+      height: 34px;
+      line-height: 34px;
+      color: white;
+      padding-left: 25px;
+      padding-right: 25px;
+      vertical-align: middle;
+      border: solid 2px white;
+      font-family: FuturaDemiC, sans-serif;
+      font-size: 0.95em; }
+    .header_top_become-partner:hover {
+      opacity: 0.2; }
+  .header_logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-100%, -50%);
+            transform: translate(-100%, -50%);
+    width: 400px;
+    padding: 50px; }
+    .header_logo_popup {
+      position: relative;
+      width: 50%;
+      top: -50px;
+      left: 50%; }
+    .header_logo_popup img {
+      position: absolute;
+      width: 100%; }
+    .header_logo_popup span {
+      display: block;
+      position: absolute;
+      vertical-align: center;
+      width: 100%;
+      text-align: center;
+      color: #fff;
+      font-size: 0.8em;
+      padding-top: 5%; }
+    .header_logo_desc {
+      font-family: FuturaBook;
+      display: block;
+      text-align: center;
+      padding-bottom: 6.25%;
+      padding-top: 6.25%;
+      height: 2.5%;
+      line-height: 2.5%;
+      color: #fff;
+      font-size: 1rem; }
+    .header_logo_desc::before {
+      content: "";
+      float: left;
+      vertical-align: middle;
+      height: 1px;
+      display: inline-block;
+      width: 35%;
+      background: white; }
+    .header_logo_desc::after {
+      content: "";
+      float: right;
+      vertical-align: middle;
+      height: 1px;
+      display: inline-block;
+      width: 35%;
+      background: white; }
+    .header_logo_download {
+      width: 46%;
+      height: 12.5%;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      cursor: pointer;
+      float: left;
+      -webkit-transition: opacity 0.3s;
+      transition: opacity 0.3s; }
+    .header_logo_download:hover {
+      opacity: 0.5; }
+  .header_img {
+    position: absolute;
+    right: 45%;
+    -webkit-transform: translate(100%);
+            transform: translate(100%);
+    bottom: -100px;
+    width: 412px;
+    height: 678px;
+    background: url(/images/_phone1.png);
+    background-size: cover;
+    background-position: center; }
+
+.items {
+  padding: 50px; }
+  .items_elem {
+    box-sizing: border-box;
+    width: 25%;
+    border: none;
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px; }
+    .items_elem_txt {
+      font-family: FuturaDemiC; }
+      .items_elem_txt h1 {
+        font-size: 1.2em; }
+      .items_elem_txt p {
+        font-family: FuturaBook;
+        font-size: 1em; }
+    .items_elem_img {
+      display: block;
+      width: 100px;
+      height: 100px;
+      margin: auto;
+      background-size: cover;
+      background-position: center; }
+      .items_elem_img_bell {
+        background: url("/images/bell.svg"); }
+      .items_elem_img_like {
+        background: url("/images/like.svg"); }
+      .items_elem_img_geo {
+        background: url("/images/geo.svg"); }
+      .items_elem_img_sheet {
+        background: url("/images/sheet.svg"); }
+
+.actions {
+  margin-top: 320px;
+  height: 410px;
+  background: #f1f1f1;
+  position: relative; }
+  .actions_content {
+    padding-top: 70px;
+    padding-left: 30px;
+    width: 45%;
+    font-family: FuturaDemiC; }
+    .actions_content h1 {
+      font-size: 2em; }
+    .actions_content p {
+      font-family: FuturaBook;
+      font-size: 1.2em; }
+  .actions_img {
+    position: relative;
+    display: block;
+    width: 100%; }
+  .actions_img_1 {
+    position: absolute;
+    top: -190px;
+    display: block;
+    right: 0;
+    width: 349px;
+    height: 544px;
+    background-size: cover;
+    background-position: center;
+    background: url("/images/phone3_2.png"); }
+  .actions_img_2 {
+    position: absolute;
+    top: -160px;
+    right: 260px;
+    width: 286px;
+    height: 568px;
+    background-size: cover;
+    background-position: center;
+    background: url("/images/phone3_1.png"); }
+
+.partners_title {
+  font-family: FuturaDemiC;
+  font-size: 2em;
+  text-align: center;
+  padding-top: 50px;
+  color: #eb645a; }
+
+.partners_main {
+  height: 185px;
+  background: #eb645a; }
+
+.partners_section {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 185px;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 185px; }
+  .partners_section_bg {
+    background: #eb645a; }
+    .partners_section_bg .flex {
+      height: 185px;
+      position: relative;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+                  -ms-grid-row-align: center;
+              align-items: center;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between; }
+  .partners_section img {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 25px;
+    padding-right: 25px; }
+
+.partners_slider {
+  position: relative;
+  white-space: nowrap; }
+
+.partners_logo {
+  cursor: pointer;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  opacity: 0.1;
+  padding: 0px;
+  margin: 0px;
+  display: inline-block;
+  vertical-align: middle; }
+
+.partners_logo:hover {
+  opacity: 1; }
+
+.partners_logo:active {
+  opacity: 1; }
+
+.arrow {
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+  cursor: pointer;
+  display: block;
+  border-radius: 50%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50px;
+          flex: 0 0 50px;
+  width: 50px;
+  height: 50px;
+  background: #ed6b62; }
+
+.arrow_item {
+  position: relative;
+  opacity: .5;
+  display: block;
+  width: 15px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+
+.arrow:hover {
+  background: #f48078; }
+  .arrow:hover .arrow_item {
+    opacity: 1; }
+
+.become-partners_content {
+  padding-top: 100px;
+  margin: auto;
+  width: 500px;
+  font-size: 1.3em;
+  font-family: FuturaBook;
+  text-align: center; }
+  .become-partners_content p {
+    margin: 10px; }
+
+.become-partners_btn {
+  font-size: 1.3em;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+  background: #29d3d1;
+  font-family: FuturaDemiC;
+  color: #fff;
+  display: block;
+  width: 360px;
+  height: 65px;
+  line-height: 65px;
+  vertical-align: middle;
+  text-align: center;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-radius: 5px;
+  cursor: pointer; }
+
+.become-partners_btn:hover {
+  background: #ed6b62; }
+
+.footer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-family: FuturaBook;
+  color: #fff;
+  background: url("/images/bg.jpg") no-repeat;
+  background-size: cover;
+  background-position: center; }
+  .footer .wrapper {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+  .footer_copyright {
+    font-size: 0.9em;
+    padding-bottom: 5px; }
+  .footer_link {
+    padding-top: 5px;
+    font-size: 0.75em; }
+    .footer_link a {
+      padding-right: 50px;
+      color: rgba(255, 255, 255, 0.4); }
+      .footer_link a:hover {
+        text-decoration: none; }
+  .footer_connect {
+    -webkit-transition: opacity 0.2s;
+    transition: opacity 0.2s;
+    position: relative;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 10px;
+    padding-left: 40px;
+    border: solid 2px #fff;
+    border-radius: 5px; }
+    .footer_connect_img {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      margin-top: -10px;
+      width: 20px;
+      height: 20px;
+      background: url("/images/contact.svg") no-repeat;
+      background-size: cover;
+      background-position: center; }
+    .footer_connect:hover {
+      opacity: 0.3; }
+
+@media (max-width: 1280px) {
+  .header_img {
+    bottom: -80px;
+    width: 329px;
+    height: 542px; } }
+
+@media (max-width: 1367px) {
+  .header_img {
+    bottom: -90px;
+    width: 371px;
+    height: 610px; } }
+
+@media (min-width: 1280px) {
+  .wrapper {
+    max-width: 1280px; } }
+
+@media (min-width: 1366px) {
+  .wrapper {
+    max-width: 1366px; } }
+
+@media (max-width: 768px) {
+  .arrow {
+    display: none; }
+  .header_top {
+    display: none; }
+  .header_logo {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+  .header_img {
+    display: none; }
+  .items_elem {
+    width: 50%; }
+  .items .flex {
+    -ms-flex-flow: row wrap;
+        flex-flow: row wrap; }
+  .tabs {
+    display: none; }
+  .actions {
+    position: static;
+    background: #fff;
+    margin-top: 0px;
+    height: 450px;
+    padding-right: 40px;
+    padding-left: 40px; }
+    .actions_img {
+      position: static; }
+      .actions_img_1 {
+        display: none; }
+      .actions_img_2 {
+        display: none; }
+    .actions_content {
+      text-align: center;
+      padding-top: 70px;
+      padding-left: 0px;
+      width: 100%;
+      font-family: FuturaDemiC; }
+      .actions_content h1 {
+        font-size: 2em; }
+      .actions_content p {
+        font-family: FuturaBook;
+        font-size: 2em; }
+  .footer_copyright {
+    padding-top: 40px;
+    text-align: center;
+    font-size: 1em; }
+  .footer .flex {
+    -ms-flex-flow: column-reverse;
+        flex-flow: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+                -ms-grid-row-align: center;
+            align-items: center; }
+  .footer_link {
+    font-size: 1em;
+    padding-top: 20px;
+    text-align: center;
+    width: 500px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .footer_link a {
+      padding-right: 0px; }
+  .footer_connect {
+    font-size: 1.5em;
+    padding: 20px;
+    padding-left: 80px;
+    padding-right: 40px; }
+    .footer_connect_img {
+      left: 50px; } }
+
+.wrapper {
+  position: relative;
+  width: 95%;
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto; }
+
+.tabs {
+  position: relative;
+  margin-top: 50px;
+  height: 576px;
+  overflow: hidden; }
+
+.tabs_bg {
+  position: absolute;
+  height: 431px;
+  width: 100%;
+  margin-top: 67px;
+  background-color: #29d3d1; }
+
+.tabs_container {
+  position: absolute;
+  top: 118px;
+  left: 473px;
+  width: 1300px;
+  height: 200px;
+  color: white; }
+
+.tab {
+  display: inline-block;
+  position: absolute;
+  vertical-align: top;
+  font-family: 'FuturaDemic';
+  font-size: 30px;
+  letter-spacing: 1.5px;
+  line-height: 61px;
+  opacity: .3;
+  border-bottom: 3px solid #29d3d1;
+  cursor: pointer;
+  -webkit-transition: 0.2s opacity;
+  transition: 0.2s opacity; }
+
+.tab:hover {
+  opacity: 1; }
+
+.tab-active {
+  border-bottom: 3px solid white;
+  opacity: 1;
+  cursor: default; }
+
+.tabs_content {
+  font-size: 20px;
+  position: absolute;
+  margin-top: 102px;
+  opacity: 0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  pointer-events: none;
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none; }
+
+.tabs_content-active {
+  opacity: 1;
+  -webkit-transition: 0.2s;
+  transition: 0.2s; }
+
+.tabs_phone {
+  position: absolute;
+  left: 89px; }
+
+.tabs_screen {
+  position: absolute;
+  top: 67px;
+  left: 64px;
+  width: 243px;
+  height: 431px;
+  overflow: hidden;
+  background: rgba(255, 0, 0, 0);
+  white-space: nowrap; }
+
+.tab_slider {
+  position: absolute; }
+
+.tab_slider img {
+  position: absolute; }
