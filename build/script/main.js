@@ -14,11 +14,14 @@
   var outset         = -370;
   var set            = 1;
 
-  var complete = false;
+  var complete = true;
 	var img_target;
 	var	new_index;
 	var _content;
+
+  // начало отсчёта для изминения позиций табов
 	var	main_index = 1;
+
 	var	target_index;
 	var sl_width;
 	var slide_time = 300;
@@ -124,6 +127,8 @@
 
 	function _move(index) {
 
+    if (complete == false) return false;
+
 		target_index = index;
 		var a = getPosition(index);
 
@@ -163,6 +168,9 @@
       console.log('draw start!');
       complete = false;
 
+      if (direction > 0) {
+        main_index = limit(main_index - direction);
+      }
 
 
       $(_content).removeClass(tabs_content_active);
@@ -223,6 +231,8 @@
 
 				else if (direction > 0) {
 
+          console.log('Отрисовал!');
+          console.log('element_index:', element_index);
 
 					if (i == tabs.length - 1) {
 						slider_pos = slider_pos + img_width;
@@ -233,28 +243,27 @@
 						img_pos = pos_start - img_width * tabs.length;
 					}
 
-					else if (i==0) {
-						current_pos_x = next_pos_x;
-						next_pos_x = current_pos_x + tab.width + offset;
-					}
-
-					else {// inbetweens
+          // нет первого элемента
+					else {
 						current_pos_x = next_pos_x;
 						next_pos_x = current_pos_x + tab.width + offset;
 					}
 
 				}
 
+        console.log('current_pos_x:', current_pos_x)
 				tab.element.animate(
 					{ left: current_pos_x },
-					{ duration: 1000 });
+					{ duration: 200 });
 			}
 
-      main_index = limit(main_index + 1);
+      if (direction < 0) {
+        main_index = limit(main_index - direction);
+      }
 
 				$(slider).animate(
 					{ left: slider_pos},
-					{ duration: 1000 ,
+					{ duration: 200 ,
             complete: function() {
 
               switch (main_index) {
@@ -272,6 +281,7 @@
 
 				$(new_img).css( "left", img_pos );
 
+        console.log('target_index:' ,target_index);
         _content = _content_prefix + main_index;
         $(_content).addClass(tabs_content_active);
         tabs[target_index].element.addClass('tab-active');
